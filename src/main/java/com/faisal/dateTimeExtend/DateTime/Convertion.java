@@ -1,6 +1,7 @@
 package com.faisal.dateTimeExtend.DateTime;
 
 import java.util.Date;
+import java.sql.Time;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -40,5 +41,10 @@ public class Convertion {
 	public static LocalTime convertTimeToLocalTime(Date time)
 	{
 		return Instant.ofEpochMilli(time.getTime()).atZone(ZoneId.systemDefault()).toLocalTime();
+	}
+	
+	public static Time convertLocalTimeToTime(LocalTime localTime) 
+	{
+		return Time.valueOf(localTime);
 	}
 }

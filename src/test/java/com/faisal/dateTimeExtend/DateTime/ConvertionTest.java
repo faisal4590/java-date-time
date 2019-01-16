@@ -2,6 +2,7 @@ package com.faisal.dateTimeExtend.DateTime;
 
 import static org.junit.Assert.*;
 
+import java.sql.Time;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -56,7 +57,6 @@ public class ConvertionTest {
 		String dateValueString = "Thu, Jan 16 2019";
 	    SimpleDateFormat sdf = new SimpleDateFormat("E, MMM dd yyyy");
 	    Date date =  sdf.parse(dateValueString);
-	    
 		assertEquals(date, Convertion.convertLocalDateToDate(ld));
 	}
 	
@@ -70,6 +70,22 @@ public class ConvertionTest {
 	    assertEquals(LocalTime.of(5,35,15), Convertion.convertTimeToLocalTime(date));
 	    //System.out.println(Convertion.convertTimeToLocalTime(date));
 	}
+	
+	@Test
+	public void LocalTimeToTime() throws ParseException
+	{
+		//incomplete
+		
+		LocalTime lt = LocalTime.of(5, 35, 15);
+		
+		String TimeValueString = "5:35:15";
+	    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	    Time time =  (Time) sdf.parse(TimeValueString);
+	    
+	    //assertEquals(time, Convertion.convertLocalTimeToTime(lt));
+	    
+	    System.out.println(time);
+ 	}
 	
 
 
